@@ -1,8 +1,7 @@
-import serve from 'rollup-plugin-serve'
-
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import postcss from 'rollup-plugin-postcss'
 
 // rollup 可以帮我们打包es6的模块化语法
 export default {
@@ -10,8 +9,9 @@ export default {
 
     output: {
         file: "./dist/animationController.js",
-        format: 'iife',
-        sourcemap: true
+        format: 'umd',
+        sourcemap: true,
+        name:"AnimationController"
     },
 
     plugins: [
@@ -19,6 +19,12 @@ export default {
             runtimeHelpers: true,
             exclude: 'node_modules/**',
             presets: ["@babel/preset-env"]
+        }),
+        postcss({
+            extract: true,
+            plugins: [
+               require('autoprefixer')({ overrideBrowserslist: ['> 0.15% in CN'] }) // 自动添加css前缀
+            ]
         }),
         resolve(),
         commonjs()
