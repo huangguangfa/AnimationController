@@ -1,8 +1,10 @@
-import "./animateCss/source/bounce.css"
-import "./animateCss/source/flash.css"
-function initAnimate(){
+import "./animateCss/source/bounce.css";
+import "./animateCss/source/flash.css";
+function _initAnimate(){
+    console.log('11111',this)
 }
 
 export {
-    initAnimate
+    _initAnimate
 }
+

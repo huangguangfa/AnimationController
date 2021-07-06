@@ -24,7 +24,8 @@ export default {
             extract: true,
             plugins: [
                require('autoprefixer')({ overrideBrowserslist: ['> 0.15% in CN'] }) // 自动添加css前缀
-            ]
+            ],
+            extensions: [ '.css' ]
         }),
         resolve(),
         commonjs()

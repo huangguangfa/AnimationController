@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../dist/animationController.css">
 </head>
 <body>
-    <div class="box bounce">
-        动画
+    <div class="box" id="app">
+        <div style="height:2000px;background: blue;">
+
+        </div>
     </div>
 </body>
 </html>
@@ -16,14 +19,15 @@
 <script src="../dist/animationController.js"></script>
 
 <script>
-    new AnimationController()
+    new AnimationController({
+        // el:"app"
+    })
 </script>
 
 
 <style>
     .box{
-        width: 100px;height: 100px;background: red;color: #fff;line-height: 100px;text-align: center;border-radius: 10px;
+        width: 100px;height: 100px;background: red;color: #fff;
+        overflow-y: auto;
     }
-
-
 </style>

@@ -1,4 +1,4 @@
-function __$styleInject(css) {
+export function __$styleInject(css) {
     css = css || '';
     let head = document.head || document.getElementsByTagName('head')[0];
     let style = document.createElement('style');
@@ -9,4 +9,8 @@ function __$styleInject(css) {
       style.appendChild(document.createTextNode(css));
     }
     head.appendChild(style);
+}
+
+export function isObject (obj) {
+    return obj !== null && typeof obj === 'object'
 }
